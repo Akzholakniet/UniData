@@ -2,9 +2,11 @@ package org.unidata1.model;
 
 import jakarta.annotation.Resource;
 import jakarta.persistence.*;
+import lombok.Builder;
 
 @Entity
 @Table(name = "roles")
+@Builder
 public class Role {
 
     @Id

@@ -1,11 +1,14 @@
 package org.unidata1.model;
 
 import jakarta.persistence.*;
+import lombok.Builder;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "messages")
+@Builder
 public class Message {
 
     @Id
@@ -63,28 +66,21 @@ public class Message {
     public Message() {
     }
 
-    public Message(Long id, User sender, User receiver, String subject, String content) {
+    public Message(Long id, User sender, User receiver, String subject, String content,
+                   LocalDateTime sentTime, LocalDateTime readTime, boolean read,
+                   MessageType messageType, Message parentMessage) {
         this.id = id;
         this.sender = sender;
         this.receiver = receiver;
         this.subject = subject;
         this.content = content;
-        this.sentTime = LocalDateTime.now();
-        this.read = false;
-        this.messageType = MessageType.PERSONAL;
+        this.sentTime = sentTime;
+        this.readTime = readTime;
+        this.read = read;
+        this.messageType = messageType;
+        this.parentMessage = parentMessage;
     }
 
-    public Message(Long id, User sender, User receiver, String subject,
-                   String content, MessageType messageType) {
-        this.id = id;
-        this.sender = sender;
-        this.receiver = receiver;
-        this.subject = subject;
-        this.content = content;
-        this.sentTime = LocalDateTime.now();
-        this.read = false;
-        this.messageType = messageType;
-    }
 
 
     public Long getId() { return id; }

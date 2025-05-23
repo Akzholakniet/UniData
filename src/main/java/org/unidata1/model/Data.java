@@ -1,11 +1,14 @@
 package org.unidata1.model;
 
 import jakarta.persistence.*;
+import lombok.Builder;
+
 import java.time.LocalDate;
 import java.util.*;
 
 @Entity
 @Table(name = "data")
+@Builder
 public class Data {
 
     @Id
@@ -40,6 +43,26 @@ public class Data {
 
     @Transient
     private List<User> students = new ArrayList<>();
+
+    public Data(Long id, String facultyName, List<String> departments,
+                List<User> studentUsers, List<User> teacherUsers,
+                List<User> teachers, List<User> students,
+                Map<String, String> specialties, LocalDate academicYearStart,
+                LocalDate academicYearEnd, String educationForm,
+                EducationLevel educationLevel) {
+        this.id = id;
+        this.facultyName = facultyName;
+        this.departments = departments != null ? departments : new ArrayList<>();
+        this.studentUsers = studentUsers != null ? studentUsers : new ArrayList<>();
+        this.teacherUsers = teacherUsers != null ? teacherUsers : new ArrayList<>();
+        this.teachers = teachers != null ? teachers : new ArrayList<>();
+        this.students = students != null ? students : new ArrayList<>();
+        this.specialties = specialties != null ? specialties : new HashMap<>();
+        this.academicYearStart = academicYearStart;
+        this.academicYearEnd = academicYearEnd;
+        this.educationForm = educationForm;
+        this.educationLevel = educationLevel;
+    }
 
 
     @ElementCollection

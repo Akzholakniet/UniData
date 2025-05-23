@@ -1,17 +1,21 @@
 package org.unidata1.model;
 
 import jakarta.persistence.*;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "audit_logs")
+@Builder
+@AllArgsConstructor
 public class AuditLog {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Связь с пользователем, предполагается, что User — тоже @Entity
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;

@@ -1,12 +1,15 @@
 package org.unidata1.model;
 
 import jakarta.persistence.*;
+import lombok.Builder;
+
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "users")
+@Builder
 public class User {
 
     @Id
@@ -38,6 +41,21 @@ public class User {
     private Set<Role> roles = new HashSet<>();
 
     public User() {
+    }
+
+    public User(Long id, String username, String password, String fullName,
+            String email, String phoneNumber, LocalDateTime registrationDate,
+            LocalDateTime lastLoginTime, boolean active, Set<Role> roles) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.fullName = fullName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.registrationDate = registrationDate;
+        this.lastLoginTime = lastLoginTime;
+        this.active = active;
+        this.roles = roles;
     }
 
     public User(Long id, String username, String fullName, String email) {
