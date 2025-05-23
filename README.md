@@ -79,23 +79,8 @@
    ```
 
 ### Структура проекта
-unidata/
-├── src/
-│   ├── main/
-│   │   ├── java/org/unidata1/
-│   │   │   ├── controller/          # Контроллеры REST API и MVC
-│   │   │   ├── model/               # Модели данных
-│   │   │   ├── repository/          # Репозитории для доступа к данным
-│   │   │   ├── service/             # Бизнес-логика
-│   │   │   ├── config/              # Конфигурации Spring
-│   │   │   └── UniDataApplication.java  # Точка входа в приложение
-│   │   └── resources/
-│   │       ├── static/              # Статические ресурсы (CSS, JS)
-│   │       ├── templates/           # Шаблоны Thymeleaf
-│   │       └── application.properties  # Конфигурация приложения
-│   └── test/                        # Тесты
-├── pom.xml                          # Конфигурация Maven
-└── README.md                        # Документация
+![image](https://github.com/user-attachments/assets/152285d9-5845-439a-ba33-b8f9f876d844)
+
 
 ## Вклад в проект
 
