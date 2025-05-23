@@ -1,15 +1,21 @@
 package org.unidata1.model;
 
 import jakarta.persistence.*;
+<<<<<<< HEAD
 import lombok.Builder;
 
+=======
+>>>>>>> temp-branch
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "users")
+<<<<<<< HEAD
 @Builder
+=======
+>>>>>>> temp-branch
 public class User {
 
     @Id
@@ -43,6 +49,7 @@ public class User {
     public User() {
     }
 
+<<<<<<< HEAD
     public User(Long id, String username, String password, String fullName,
             String email, String phoneNumber, LocalDateTime registrationDate,
             LocalDateTime lastLoginTime, boolean active, Set<Role> roles) {
@@ -58,6 +65,8 @@ public class User {
         this.roles = roles;
     }
 
+=======
+>>>>>>> temp-branch
     public User(Long id, String username, String fullName, String email) {
         this.id = id;
         this.username = username;
@@ -109,4 +118,8 @@ public class User {
                 ", active=" + active +
                 '}';
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> temp-branch

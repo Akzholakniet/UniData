@@ -1,21 +1,31 @@
 package org.unidata1.model;
 
 import jakarta.persistence.*;
+<<<<<<< HEAD
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
+=======
+>>>>>>> temp-branch
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "audit_logs")
+<<<<<<< HEAD
 @Builder
 @AllArgsConstructor
+=======
+>>>>>>> temp-branch
 public class AuditLog {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+<<<<<<< HEAD
+=======
+    // Связь с пользователем, предполагается, что User — тоже @Entity
+>>>>>>> temp-branch
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;

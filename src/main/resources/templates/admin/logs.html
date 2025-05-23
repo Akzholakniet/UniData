@@ -163,6 +163,10 @@
         <h1 class="admin-title" th:text="${pageTitle}">Жүйе журналдары</h1>
         <div class="admin-actions">
             <a th:href="@{/admin/logs/export}" class="btn btn-outline-primary">Экспорттау</a>
+<<<<<<< HEAD
+=======
+            <button id="clear-logs" class="btn btn-outline-danger">Тазалау</button>
+>>>>>>> temp-branch
         </div>
     </div>
 
@@ -248,6 +252,30 @@
             </tbody>
         </table>
     </div>
+<<<<<<< HEAD
+=======
+
+    <div class="pagination" th:if="${totalPages > 0}">
+        <a class="page-item" th:classappend="${currentPage == 0 ? 'disabled' : ''}"
+           th:href="@{/admin/logs(page=${currentPage - 1}, size=10, search=${search}, level=${level}, startDate=${startDate}, endDate=${endDate})}"
+           th:unless="${currentPage == 0}">Алдыңғы</a>
+
+        <span class="page-item disabled" th:if="${currentPage == 0}">Алдыңғы</span>
+
+        <span th:each="i: ${#numbers.sequence(0, totalPages - 1)}"
+              th:if="${i >= currentPage - 2 && i <= currentPage + 2}">
+            <a class="page-item" th:classappend="${currentPage == i ? 'active' : ''}"
+               th:href="@{/admin/logs(page=${i}, size=10, search=${search}, level=${level}, startDate=${startDate}, endDate=${endDate})}"
+               th:text="${i + 1}">1</a>
+        </span>
+
+        <a class="page-item" th:classappend="${currentPage == totalPages - 1 ? 'disabled' : ''}"
+           th:href="@{/admin/logs(page=${currentPage + 1}, size=10, search=${search}, level=${level}, startDate=${startDate}, endDate=${endDate})}"
+           th:unless="${currentPage == totalPages - 1}">Келесі</a>
+
+        <span class="page-item disabled" th:if="${currentPage == totalPages - 1}">Келесі</span>
+    </div>
+>>>>>>> temp-branch
 </div>
 
 <script>

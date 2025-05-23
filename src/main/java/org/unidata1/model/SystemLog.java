@@ -1,11 +1,25 @@
 package org.unidata1.model;
 
 import jakarta.persistence.*;
+<<<<<<< HEAD
+=======
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+>>>>>>> temp-branch
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "system_logs")
+<<<<<<< HEAD
+=======
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+>>>>>>> temp-branch
 public class SystemLog {
 
     @Id
@@ -47,6 +61,7 @@ public class SystemLog {
     public enum LogLevel {
         INFO, WARNING, ERROR, DEBUG
     }
+<<<<<<< HEAD
 
     // Базовый конструктор
     public SystemLog() {
@@ -238,4 +253,6 @@ public class SystemLog {
             return new SystemLog(id, timestamp, level, username, user, action, ipAddress, userAgent, sessionId, details, stackTrace);
         }
     }
+=======
+>>>>>>> temp-branch
 }

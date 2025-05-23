@@ -1,14 +1,20 @@
 package org.unidata1.model;
 
 import jakarta.persistence.*;
+<<<<<<< HEAD
 import lombok.Builder;
 
+=======
+>>>>>>> temp-branch
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "messages")
+<<<<<<< HEAD
 @Builder
+=======
+>>>>>>> temp-branch
 public class Message {
 
     @Id
@@ -66,14 +72,19 @@ public class Message {
     public Message() {
     }
 
+<<<<<<< HEAD
     public Message(Long id, User sender, User receiver, String subject, String content,
                    LocalDateTime sentTime, LocalDateTime readTime, boolean read,
                    MessageType messageType, Message parentMessage) {
+=======
+    public Message(Long id, User sender, User receiver, String subject, String content) {
+>>>>>>> temp-branch
         this.id = id;
         this.sender = sender;
         this.receiver = receiver;
         this.subject = subject;
         this.content = content;
+<<<<<<< HEAD
         this.sentTime = sentTime;
         this.readTime = readTime;
         this.read = read;
@@ -81,6 +92,24 @@ public class Message {
         this.parentMessage = parentMessage;
     }
 
+=======
+        this.sentTime = LocalDateTime.now();
+        this.read = false;
+        this.messageType = MessageType.PERSONAL;
+    }
+
+    public Message(Long id, User sender, User receiver, String subject,
+                   String content, MessageType messageType) {
+        this.id = id;
+        this.sender = sender;
+        this.receiver = receiver;
+        this.subject = subject;
+        this.content = content;
+        this.sentTime = LocalDateTime.now();
+        this.read = false;
+        this.messageType = messageType;
+    }
+>>>>>>> temp-branch
 
 
     public Long getId() { return id; }

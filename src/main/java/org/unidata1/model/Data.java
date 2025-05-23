@@ -1,14 +1,20 @@
 package org.unidata1.model;
 
 import jakarta.persistence.*;
+<<<<<<< HEAD
 import lombok.Builder;
 
+=======
+>>>>>>> temp-branch
 import java.time.LocalDate;
 import java.util.*;
 
 @Entity
 @Table(name = "data")
+<<<<<<< HEAD
 @Builder
+=======
+>>>>>>> temp-branch
 public class Data {
 
     @Id
@@ -44,6 +50,7 @@ public class Data {
     @Transient
     private List<User> students = new ArrayList<>();
 
+<<<<<<< HEAD
     public Data(Long id, String facultyName, List<String> departments,
                 List<User> studentUsers, List<User> teacherUsers,
                 List<User> teachers, List<User> students,
@@ -64,6 +71,8 @@ public class Data {
         this.educationLevel = educationLevel;
     }
 
+=======
+>>>>>>> temp-branch
 
     @ElementCollection
     @CollectionTable(name = "specialties", joinColumns = @JoinColumn(name = "data_id"))

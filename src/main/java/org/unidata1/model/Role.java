@@ -2,11 +2,17 @@ package org.unidata1.model;
 
 import jakarta.annotation.Resource;
 import jakarta.persistence.*;
+<<<<<<< HEAD
 import lombok.Builder;
 
 @Entity
 @Table(name = "roles")
 @Builder
+=======
+
+@Entity
+@Table(name = "roles")
+>>>>>>> temp-branch
 public class Role {
 
     @Id
